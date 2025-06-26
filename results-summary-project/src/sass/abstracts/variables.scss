@@ -1,0 +1,52 @@
+:root {
+  --clr-white: rgb(255, 255, 255);
+  --clr-black: rgb(0, 0, 0);
+
+  --clr-navy-950: rgb(48, 59, 89);
+  --clr-navy-200: rgb(202, 201, 255);
+  --clr-navy-50: rgb(236, 242, 255);
+
+  --clr-blue-800: rgb(17, 37, 214);
+  --clr-blue-50: rgb(243, 244, 253);
+
+  --clr-yellow-400: rgb(255, 178, 30);
+  --clr-yellow-50: rgb(255, 251, 244);
+
+  --clr-red-400: rgb(255, 85, 85);
+  --clr-red-50: rgb(255, 246, 246);
+
+  --clr-green-500: rgb(0, 187, 143);
+  --clr-green-50: rgb(242, 252, 249);
+
+  --gradient1: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 0.7),
+    hsla(241, 72%, 46%, 0)
+  );
+  --gradient2: linear-gradient(to bottom, #7755ff 0%, #2f2ce9 80%);
+
+  --ff: "Hanken Grotesk", sans-serif;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  --fs-100: 6.25rem;
+  --fs-80: 5rem;
+  --fs-56: 3.5rem;
+  --fs-32: 2rem;
+  --fs-28: 1.75rem;
+  --fs-24: 1.5rem;
+  --fs-18: 1.125rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+  --fs-13: 0.8125rem;
+  --fs-12: 0.75rem;
+  --fs-11: 0.6875rem;
+}

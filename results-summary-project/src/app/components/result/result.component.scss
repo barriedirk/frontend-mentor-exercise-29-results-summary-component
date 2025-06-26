@@ -1,0 +1,59 @@
+.result {
+  background: var(--gradient2);
+  min-height: 356px;
+  width: 100%;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+
+  &--card {
+    width: 260px;
+    gap: 24px;
+  }
+
+  &__score {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--gradient1);
+    gap: 10px;
+  }
+
+  &__title,
+  &__score-tot-perc,
+  &__description {
+    color: var(--clr-navy-200);
+  }
+
+  &__title {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-18);
+  }
+
+  &__score-perc {
+    color: var(--clr-white);
+    font-weight: var(--fw-extrabold);
+    font-size: var(--fs-56);
+    line-height: 1;
+  }
+
+  &__score-tot-perc {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-16);
+  }
+
+  &__details {
+    gap: 8px;
+  }
+
+  &__title--sub {
+    color: var(--clr-white);
+    font-size: var(--fs-24);
+    font-weight: var(--fw-medium);
+  }
+
+  &__description {
+    font-size: var(--fs-16);
+    font-weight: var(--fw-medium);
+    line-height: 1.2;
+  }
+}

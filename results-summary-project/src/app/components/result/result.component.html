@@ -2,13 +2,13 @@
   <div class="result--card flex-col-center">
     <h2 id="resultTitle" class="result__title">Your Result</h2>
     <div class="result__score flex-col-center">
-      <h3 class="result__score-perc">76</h3>
+      <h3 class="result__score-perc">{{ score | number: "1.0-0" }}</h3>
       <p class="result__score-tot-perc">of 100</p>
     </div>
     <div class="result__details flex-col-center">
-      <h2 id="resultSubTitle" class="result__title--sub">Great</h2>
+      <h2 id="resultSubTitle" class="result__title--sub">{{ scoreTitle }}</h2>
       <p cid="resultDescription" class="result__description">
-        You scored higher than 65% of the people who have taken these tests.
+        {{ scoreDescription }}
       </p>
     </div>
   </div>

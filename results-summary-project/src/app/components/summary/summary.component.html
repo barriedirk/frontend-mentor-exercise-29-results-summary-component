@@ -3,32 +3,36 @@
     <h2 class="summary-title">Summary</h2>
 
     <ul class="summary-points flex-col-center">
-      <li class="summary-point bg-red flex-row">
-        <span class="summary-point-icon clr-red">
-          <img src="assets/images/icon-memory.svg" alt="Icon Memory" />
-        </span>
-        <span class="summary-point-description clr-red medium">Memory</span>
-        <span class="summary-point-percent bold clr-navy">
-          <span class="">92</span>
-          <span class="clr-navy"> / 100</span>
-        </span>
-      </li>
-      <li class="summary-point bg-navy flex-row">
-        <span class="summary-point-icon"></span>
-        <span class="summary-point-description">Memory</span>
-        <span class="summary-point-percent">92 / 100</span>
-      </li>
-      <li class="summary-point bg-blue flex-row">
-        <span class="summary-point-icon"></span>
-        <span class="summary-point-description">Memory</span>
-        <span class="summary-point-percent">92 / 100</span>
-      </li>
-      <li class="summary-point bg-red flex-row">
-        <span class="summary-point-icon"></span>
-        <span class="summary-point-description">Memory</span>
-        <span class="summary-point-percent">92 / 100</span>
-      </li>
+      @if (mainPoints(); as points) {
+        @for (point of points; track point.category) {
+          <li
+            class="summary-point flex-row"
+            [ngStyle]="styles(point.category)"
+            [attr.aria-label]="point.score + '/100 for ' + point.category"
+            role="listitem"
+            tabindex="0"
+            (keydown)="onPointKeyDown($event, point)"
+            (click)="onPointClick(point)"
+          >
+            <span class="summary-point-icon">
+              <img [src]="point.icon" [alt]="'Icon ' + point.category" />
+            </span>
+            <span class="summary-point-category medium">
+              {{ point.category }}
+            </span>
+            <span class="summary-point-percent bold clr-navy">
+              <span>{{ point.score }}</span>
+              <span class="opacity-50"> / 100</span>
+            </span>
+          </li>
+        } @empty {
+          <li>No summary points available.</li>
+        }
+      } @else {
+        <li>Loading summary...</li>
+      }
     </ul>
+
     <button type="button" class="summary-continue bold">Continue</button>
   </div>
 </section>

@@ -1,11 +1,20 @@
 .result-summary {
   display: flex;
   flex-direction: column;
+  background-color: var(--clr-white);
 }
 
 @media screen and (min-width: 48em) {
   .result-summary {
+    width: 686px;
     display: flex;
     flex-direction: row;
+    border-radius: 32px;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .result-summary {
+    width: 736px;
   }
 }

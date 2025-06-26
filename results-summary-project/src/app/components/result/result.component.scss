@@ -55,5 +55,50 @@
     font-size: var(--fs-16);
     font-weight: var(--fw-medium);
     line-height: 1.2;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .result {
+    height: 512px;
+    width: 338px;
+    border-radius: 32px;
+
+    &__title {
+      font-size: var(--fs-24);
+    }
+
+    &__score {
+      width: 200px;
+      height: 200px;
+    }
+
+    &__score-perc {
+      font-size: var(--fs-72);
+    }
+
+    &__description,
+    &__score-tot-perc {
+      font-size: var(--fs-18);
+    }
+
+    &__title--sub {
+      font-size: var(--fs-32);
+    }
+
+    &__description {
+      max-width: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .result {
+    width: 368px;
+
+    &__description {
+      max-width: 260px;
+    }
   }
 }

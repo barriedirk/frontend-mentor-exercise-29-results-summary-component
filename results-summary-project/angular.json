@@ -24,6 +24,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/frontend-mentor-exercise-29-results-summary-component",
+            "baseHref": "/frontend-mentor-exercise-29-results-summary-component/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [],
@@ -94,6 +95,9 @@
             "styles": ["src/sass/styles.scss"],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

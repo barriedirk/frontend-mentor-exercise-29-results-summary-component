@@ -1,0 +1,20 @@
+.footer__attribution {
+  visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  color: var(--clr-navy-950);
+  font-size: var(--fs-12);
+  margin-bottom: 20px;
+
+  & a {
+    color: var(--clr-navy-950);
+    text-decoration: dotted;
+    font-weight: var(--fw-bold);
+  }
+}
+
+@media screen and (min-width: 48em) and (min-height: 40em) {
+  .footer__attribution {
+    visibility: visible;
+  }
+}

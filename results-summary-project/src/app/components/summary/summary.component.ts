@@ -1,7 +1,7 @@
 import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { MainPoints } from '@models/summary';
+import { SummaryItem } from '@models/summary';
 import { DataService } from '@services/data.service';
 
 @Component({
@@ -15,11 +15,6 @@ import { DataService } from '@services/data.service';
 export class SummaryComponent {
   private dataService = inject(DataService);
   mainPoints = toSignal(this.dataService.getData(), { initialValue: null });
-
-  // summaryData: WritableSignal<Summary | null> = signal<Summary | null>(null);
-  // ngOnInit() {
-  // this.dataService.getData().subscribe((data) => this.summaryData.set(data));
-  // }
 
   styles(category: string): Record<string, string> {
     const styleMap: Record<string, Record<string, string>> = {
@@ -35,7 +30,7 @@ export class SummaryComponent {
     return styleMap[category] ?? {};
   }
 
-  onPointKeyDown(event: KeyboardEvent, point: MainPoints): void {
+  onPointKeyDown(event: KeyboardEvent, point: SummaryItem): void {
     const key = event.key.toLowerCase();
 
     if (key === 'enter' || key === ' ') {
@@ -45,7 +40,7 @@ export class SummaryComponent {
     }
   }
 
-  onPointClick(point: MainPoints): void {
+  onPointClick(point: SummaryItem): void {
     console.log('User selected:', point);
   }
 }

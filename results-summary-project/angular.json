@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/results-summary-project",
+            "outputPath": "dist/frontend-mentor-exercise-29-results-summary-component",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [],

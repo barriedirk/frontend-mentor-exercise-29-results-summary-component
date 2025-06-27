@@ -32,15 +32,54 @@ export class ResultComponent {
       const points = this.mainPoints();
 
       if (points) {
-        this.score =
-          points.reduce((acc, curr) => {
-            acc += curr.score;
+        this.score = Math.round(
+          points.reduce((acc, curr) => acc + curr.score, 0) / points.length,
+        );
 
-            return acc;
-          }, 0) / points.length;
-
+        this.setScoreFeedback(this.score);
         this.cdr.markForCheck();
       }
     });
+  }
+
+  private setScoreFeedback(score: number): void {
+    const feedbackRanges = [
+      {
+        min: 90,
+        title: 'Excellent',
+        description:
+          'You scored higher than 90% of the people who have taken these tests.',
+      },
+      {
+        min: 65,
+        title: 'Great',
+        description:
+          'You scored higher than 65% of the people who have taken these tests.',
+      },
+      {
+        min: 60,
+        title: 'Good',
+        description:
+          'You scored higher than 60% of the people who have taken these tests.',
+      },
+      {
+        min: 40,
+        title: 'Average',
+        description:
+          'You scored higher than 40% of the people who have taken these tests.',
+      },
+      {
+        min: 0,
+        title: 'Needs Improvement',
+        description: 'You scored lower than most people. Keep practicing!',
+      },
+    ];
+
+    const feedback = feedbackRanges.find((range) => score >= range.min);
+
+    if (feedback) {
+      this.scoreTitle = feedback.title;
+      this.scoreDescription = feedback.description;
+    }
   }
 }

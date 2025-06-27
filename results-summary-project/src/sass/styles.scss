@@ -1,12 +1,9 @@
-// @import "tailwindcss";
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
 @import "./abstracts/variables.scss";
 
 @import "./base/reset.scss";
 @import "./base/base.scss";
+
+@import "./layout/footer.scss";
 
 @import "./utils/helpers.scss";
 // @import "./base/debug.scss";

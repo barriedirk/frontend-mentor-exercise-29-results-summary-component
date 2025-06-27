@@ -1,13 +1,22 @@
-<section class="result flex-col-center" aria-label="Result">
+<section
+  class="result flex-col-center"
+  role="region"
+  aria-labelledby="resultTitle"
+  aria-describedby="resultSubTitle resultDescription"
+>
   <div class="result--card flex-col-center">
     <h2 id="resultTitle" class="result__title">Your Result</h2>
+
     <div class="result__score flex-col-center">
-      <h3 class="result__score-perc">{{ score | number: "1.0-0" }}</h3>
+      <h3 class="result__score-perc">
+        {{ score | number: "1.0-0" }}
+      </h3>
       <p class="result__score-tot-perc">of 100</p>
     </div>
+
     <div class="result__details flex-col-center">
-      <h2 id="resultSubTitle" class="result__title--sub">{{ scoreTitle }}</h2>
-      <p cid="resultDescription" class="result__description">
+      <h3 id="resultSubTitle" class="result__title--sub">{{ scoreTitle }}</h3>
+      <p id="resultDescription" class="result__description">
         {{ scoreDescription }}
       </p>
     </div>
